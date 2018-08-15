@@ -7,7 +7,7 @@ MAINTAINER Siarhei Navatski <navatski@gmail.com>, Andrey Aleksandrov <alex.demio
 #------------------------------------------------------------------------------
 # Environment variables:
 #------------------------------------------------------------------------------
-ENV VERSION="1.7.6" \
+ENV VERSION="1.7.7" \
     RELEASE_DATE="21.11.2017" \
     CRON_TIMEOUT="0 * * * *" \
     PHP_TIMEZONE="UTC" \
@@ -26,7 +26,7 @@ RUN apk update \
     && apk upgrade \
     && apk --no-cache add --update -t deps wget unzip sqlite build-base tar re2c make file curl \
     && apk --no-cache add nginx php5-common php5-cli php5-fpm php5-curl php5-sqlite3 php5-mysql php5-pdo_sqlite php5-iconv php5-json php5-ctype php5-zip \
-    && wget -q http://korphome.ru/torrent_monitor/tm-latest.zip -O /tmp/tm-latest.zip \
+    && wget -q http://tormon.ru/tm-latest.zip -O /tmp/tm-latest.zip \
     && unzip /tmp/tm-latest.zip -d /tmp/ \
     && rm -f /tmp/TorrentMonitor-master/config.php \
     && mv /tmp/TorrentMonitor-master/* /data/htdocs \
